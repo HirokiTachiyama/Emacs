@@ -337,6 +337,8 @@
 ;;(unless (boundp '*hoge*)
 ;;  (defvar *hoge* (read)))
 
+;;(toggle-frame-fullscreen)
+
 (defun mycopyrights ()
   (print
    "Copyrights (C) 2015 All Rights ReservedHiroki Tachiyama"))
