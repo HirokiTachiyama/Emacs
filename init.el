@@ -5,7 +5,7 @@
 ;;;;; init.el
 ;;;;; Edittor       Hiroki Tachiyama
 ;;;;; Written       2015/03/31 14:00
-;;;;; Last Modified 2015/05/6 12:00
+;;;;; Last Modified 2015/05/26 12:00
 ;;;;;
 ;;;;; ・設定についての説明もしっかり残しておくこと！
 ;;;;; ・どの環境でもこのファイルとその他ディレクトリ（elise等）を入れれば
@@ -23,10 +23,10 @@
 ;;;;;;;;;;when文などで場合分けする。
 ;;;;;;;;;;defvarでconst変数
 ;;(defvar *Using-Operating-System* "Arch Linux VaioL")
-;;(defvar *Using-Operating-System* "Arch Linux VaioZ")
+(defvar *Using-Operating-System* "Arch Linux VaioZ")
 ;;(defvar *Using-Operating-System* "Arch Linux KatLab")
 ;;(defvar *Using-Operating-System* "Windows VaioL")
-(defvar *Using-Operating-System* "Windows VaioZ")
+;;(defvar *Using-Operating-System* "Windows VaioZ")
 ;;(defvar *Using-Operating-System* "Windows KatLab")
 ;;;;;;;;;;Using-Operating-Systemおわり;;;;;;;;;;
 
@@ -306,6 +306,10 @@
 			:height 120))
 
 ;この環境はなんだかMeiryoだとギザギザしたのでRictyで
+(if (string-equal *Using-Operating-System* "Arch Linux VaioZ")
+    (set-face-attribute 'default nil
+			:family "Ricty"
+			:height 140))
 (if (string-equal *Using-Operating-System* "Arch Linux VaioL")
     (set-face-attribute 'default nil
 			:family "Ricty"
