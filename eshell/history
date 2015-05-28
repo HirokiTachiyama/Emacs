@@ -1,88 +1,4 @@
 ls
-cd ../workspace/
-ls
-cd ETRob2013_source_code/
-ls
-cd /cygwin64/
-ls
-cd ..
-ls
-cd Users/ht_2/Downloads/
-l
-ls
-unzip ETRob2014Kagoshima-2015-05-06.zip 
-ls
-cd ~/ETRob/ev3rt-beta4-release/
-ls
-cd hrp2/workspace/
-ls
-make 
-make mod=helloev3
-oge
-cd sample_c4/
-ls
-ls -la
-chmod 755 ./*
-chmod 755 app.*
-sudo chmod app.c 755
-chmod app.c 755
-ls -la
-chmod balancer* 755
-chmod balancer.c 755
-chmod balancer.h 755
-ls -la
-chmod balancer_private.h 755
-chmod balancer_private.c 755
-ls
-ls -la
-chmod app.cfg 755
-chmod app.h 755
-ls -la
-chmod balancer_param.c 755
-chmod Makefile.inc 755
-ls -la
-chmod Makefile.appmod 755
-chmod Makefile.app 755
-ls -la
-ls
-cd ~/ETRob/
-ls
-cd ev3rt-beta4-release/
-ls
-cd hrp2/workspace/
-ls
-cp ETR2015/ ./ETR2015_05_08
-cp ETR2015/ ./ETR2015_05_08 -r
-ls
-ls ETR2015_05_08/
-cd ETR2015_05_08/
-ls
-ls
-rm motor_pid*
-ls
-rm common_definition.h 
-ls
-ls
-rm maimai* 
-ls
-ls ../gyroboy/
-ls ../sample_c4/
-ls
-ls
-cd ../sample_c4/
-ls
-cd ../ETR2015_05_08/
-cp c://Users/ht_2/Downloads/sample_c4/sample_c4/common_definition.h .
-ls
-ls
-ls
-make mod=sample_c4
-ls
-make mod=etrobo_tr_2015_s_ex1
-ls
-ls -la
-make mod=ETrikeV_EV3RT_sample
-ls
 ls
 ls
 make mod=etrobo_tr_2015
@@ -96,11 +12,11 @@ cd ../
 ls
 cd ..
 ls
-cd åˆéÆîzïzï®/
+cd ∏¯º∞«€…€ ™/
 ls
-cd ETÉçÉ{ÉRÉìãZèpã≥àÁëÊàÍâÒ\ éëóø/
+cd ET•Ì•‹•≥•ÛµªΩ—∂µ∞È¬Ë∞Ï≤Û\ ªÒŒ¡/
 ls
-cd ETÉçÉ{ÉRÉì2015ãZèpã≥àÁéëóø\(ÉÇÉfÉäÉìÉOÅj/
+cd ET•Ì•‹•≥•Û2015µªΩ—∂µ∞ÈªÒŒ¡\(•‚•«•Í•Û•∞°À/
 ls
 unzip etrobo_tr_2015_model.zip 
 ls
@@ -126,3 +42,87 @@ ls
 ls
 ls
 git init 
+ls
+cd ..
+ls
+cd ..
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015 
+^
+make mod=Rob2015 
+from ../Rob2015/app.h:54,
+make mod=Rob2015 
+ls
+pwd
+grep "motor_port_t" 
+grep "motor_port_t" /
+grep "motor_port_t" .
+ls
+cd Rob2015/
+ls
+ls
+nano self_localization.h
+ls
+cd ..
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015
+locate
+locate module.h
+udpatedb
+locate app.c
+ls
+man locate
+ls
+cd common
+ls
+cd lib
+ls
+ls lib2
+cd ..
+ls
+make mod=Rob2015
+ls
+cd sample_c4_kikkawa_pid/
+cat app.c
+ls
+cd sample_c4/
+cat app.c
+            (float)gyro,
+cd ../../
+;s
+ls
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015
+../Rob2015/self_localization.c:9:3: warning: implicit declaration of function 'ev3_motor_reset_counts' [-Wimplicit-function-declaration]
+make mod=Rob2015
+make mod=Rob2015
+make mod=Rob2015
+ls
+mv app run_back_forward
+cp run_back_forward /cygdrive/d/ev3rt/apps/
+make mod=Rob2015
+mv app run_forward_back
+ls
+cd Rob2015/
+ls
+git status
+git add self_localization.c
+git commit
+make mod=etrobo_tr_2015
+cd ..
+make mod=etrobo_tr_2015
+make mod=Rob2015
+mv app sl
+cp sl /cygdrive/d/ev3rt/apps/
+make mod=Rob2015
+mv app sl
+cp sl /cygdrive/d/ev3rt/apps/
