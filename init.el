@@ -5,7 +5,7 @@
 ;;;;; init.el
 ;;;;; Edittor       Hiroki Tachiyama
 ;;;;; Written       2015/03/31 14:00
-;;;;; Last Modified 2015/05/26 12:00
+;;;;; Last Modified 2015/06/03 12:00
 ;;;;;
 ;;;;; ・設定についての説明もしっかり残しておくこと！
 ;;;;; ・どの環境でもこのファイルとその他ディレクトリ（elise等）を入れれば
@@ -302,14 +302,12 @@
 			:height 120))
 (if (string-equal *Using-Operating-System* "Windows VaioZ")
     (set-face-attribute 'default nil
-			:family "Osaka"
-			:height 120))
-
-;この環境はなんだかMeiryoだとギザギザしたのでRictyで
+			:family "Osaka－等幅"
+			:height 100))
 (if (string-equal *Using-Operating-System* "Arch Linux VaioZ")
     (set-face-attribute 'default nil
-			:family "Ricty"
-			:height 140))
+			:family "Osaka－等幅"
+			:height 120))
 (if (string-equal *Using-Operating-System* "Arch Linux VaioL")
     (set-face-attribute 'default nil
 			:family "Ricty"

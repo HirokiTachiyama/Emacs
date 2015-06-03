@@ -1,23 +1,4 @@
 ls
-ls
-ls
-make mod=etrobo_tr_2015
-ls
-cp app /cygdrive/d/ev3rt/apps/etrobo_tr_2015
-cd ../../
-ls
-cd ..
-ls
-cd ../
-ls
-cd ..
-ls
-cd 公式配布物/
-ls
-cd ETロボコン技術教育第一回\ 資料/
-ls
-cd ETロボコン2015技術教育資料\(モデリング）/
-ls
 unzip etrobo_tr_2015_model.zip 
 ls
 ls
@@ -95,7 +76,7 @@ cat app.c
 ls
 cd sample_c4/
 cat app.c
-            (float)gyro,
+(float)gyro,
 cd ../../
 ;s
 ls
@@ -126,3 +107,22 @@ cp sl /cygdrive/d/ev3rt/apps/
 make mod=Rob2015
 mv app sl
 cp sl /cygdrive/d/ev3rt/apps/
+ls
+cd ETRob/
+l
+ls
+rm ev3rt-beta4-release.zip 
+ls
+cd ev3rt-beta4-release/
+s
+cd hrp2/workspace/
+ls
+git clone http://github.com/HirokiTachiyama/Rob2015.git
+ls
+cd Rob2015/
+ls
+platex 20150529.tex 
+ls
+pwd
+git init
+git status
