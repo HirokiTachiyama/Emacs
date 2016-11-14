@@ -1,128 +1,128 @@
+platex 20160920.tex 
+dvipdfmx 20160920.dvi
+mv abst.txt H28\ Kyusyusibu/
+ls H28\ Kyusyusibu/
 ls
-unzip etrobo_tr_2015_model.zip 
+ls
+./a.exe 
 ls
 ls
-elisp
+g++ ExplorerTest.cpp
+./a.exe 
+./a.exe ls
 ls
-cat readme.txt 
+a.exe 
+./a.exe
+ls
+g++ ExplorerTest.cpp
+ls
+g++ ExplorerTest.cpp Explorer.cpp Node.cpp 
+ls
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+./a.exe 
+sb**
+cp -r  ../Workspace/Java/BWDM_5thEdition_ver20160901/ .
+ls
+ls
+mv BWDM_5thEdition_ver20160901 Java/
+cd Java/
+ls
+ls
+mkdir BWDM
+cd BWDM_5thEdition_ver20160901/
+ls
+cp src/BWDM/* ../BWDM/
+ls
+cd ../BWDM
+ls
+java AnalyzedData.java 
+ls
+platex translation.tex
+dvipdfmx translation.dvi
+platex translation.tex
+dvipdfmx translation.dvi
+platex translation.tex
+dvipdfmx translation.dvi
+platex 20161007.tex 
+dvipdfmx 20161007.dvi
+ls
+platex 20161014.tex 
+dvipdfmx 20161014.dvi
+platex 20161014_weekend.tex 
+platex 20161014_weekend.tex 
+platex 20161014_weekend.tex 
+dvipdfmx 20161014_weekend.tex
+dvipdfmx 20161014_weekend.dvi
+./gtkcounter_1-1.exe
+gcc -o gtkcounter_1-1 gtkcounter_1-1.c  `pkg-config  --cflags  --libs gtk+-2.0  gmodule-2.0`
+gcc -o gtkcounter_1-1 gtk.c  `pkg-config  --cflags  --libs gtk+-2.0  gmodule-2.0`
+ls
+ls
+gcc -o gtkcounter_1-1 gtk.c  `pkg-config  --cflags  --libs gtk+-2.0  gmodule-2.0`
+gcc -o gtkcounter_1-1 gtk.c  `pkg-config  --cflags  --libs gtk+-2.0  gmodule-2.0`
+pkg-config
+gcc -o gtkcounter_1-1 gtk.c  'pkg-config  --cflags  --libs gtk+-2.0  gmodule-2.0'
+gcc -o gtkcounter_1-1 gtk.c  'pkg-config  --cflags  --libs gtk+-2.0  gmodule-2.0''pkg-config  --cflags  --libs gtk+-2.0  gmodule-2.0'
+gcc -o buttons gtk.c `pkg-config --cflags --libs gtk+-2.0 gmodule-2.0`
+platex 20161021.tex 
+dvipdfmx 20161021.dvi
+ls
 ls
 cd ..
-make mod=ETR2015_05_08
-cp app /cygdrive/d/ev3rt/apps/tachiyama_bakusoku
-make mod=ETR2015_05_08
-cp app /cygdrive/d/ev3rt/apps/tachiyama_bakusoku
-make mod=ETR2015_05_08
-make mod=ETR2015_05_08
-make mod=ETR2015_05_08
-cp app /cygdrive/d/ev3rt/apps/tachiyama_bakusoku
-make mod=ETR2015_05_08
-cp app /cygdrive/d/ev3rt/apps/tachiyama_bakusoku
+make app=sample_c4/
+cp app d:/ev3rt/apps/tachyama
+cp app d:/ev3rt/apps/tachyama
+cp app d:/ev3rt/apps/tachyama
+cp app d:/ev3rt/apps/tachyama
 ls
-cd ../ETR2015
+cp app d:/ev3rt/apps/tachiyama
+make app=sample_c4/
+cp app d:/ev3rt/apps/tachiyama
+cp app d:/ev3rt/apps/tachiyama
+platex 20161028.tex 
+dvipdfmx 20161028.dvi
 ls
+ls -la
+chmod 755 main.rb 
+./main.rb
+ls -la
 ls
+./ma
+./main.rb
 ls
-git init 
-ls
-cd ..
-ls
-cd ..
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015 
-^
-make mod=Rob2015 
-from ../Rob2015/app.h:54,
-make mod=Rob2015 
-ls
-pwd
-grep "motor_port_t" 
-grep "motor_port_t" /
-grep "motor_port_t" .
-ls
-cd Rob2015/
-ls
-ls
-nano self_localization.h
-ls
-cd ..
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015
-locate
-locate module.h
-udpatedb
-locate app.c
-ls
-man locate
-ls
-cd common
-ls
-cd lib
-ls
-ls lib2
-cd ..
-ls
-make mod=Rob2015
-ls
-cd sample_c4_kikkawa_pid/
-cat app.c
-ls
-cd sample_c4/
-cat app.c
-(float)gyro,
+ruby main.rb 
+ruby main.rb 
+ruby main.rb
+ruby main.rb
+ruby main.rb
+ruby main.rb 
 cd ../../
-;s
 ls
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015
-../Rob2015/self_localization.c:9:3: warning: implicit declaration of function 'ev3_motor_reset_counts' [-Wimplicit-function-declaration]
-make mod=Rob2015
-make mod=Rob2015
-make mod=Rob2015
+cd Latex/KatLatReport/2016/11_November/
+platex 20161111.tex 
+dvipdfmx 20161111.dvi
+platex 20161111.tex 
+dvipdfmx 20161111.dvi
+dvipdfmx 20161111.dvi
+platex 20161111.tex 
+dvipdfmx 20161111.dvi
+ruby -v
 ls
-mv app run_back_forward
-cp run_back_forward /cygdrive/d/ev3rt/apps/
-make mod=Rob2015
-mv app run_forward_back
+cd ~
 ls
-cd Rob2015/
+cd c:/Users/ht_2/OneDrive/ドキュメント/sourcecode/Ruby/
 ls
-git status
-git add self_localization.c
-git commit
-make mod=etrobo_tr_2015
-cd ..
-make mod=etrobo_tr_2015
-make mod=Rob2015
-mv app sl
-cp sl /cygdrive/d/ev3rt/apps/
-make mod=Rob2015
-mv app sl
-cp sl /cygdrive/d/ev3rt/apps/
-ls
-cd ETRob/
-l
-ls
-rm ev3rt-beta4-release.zip 
-ls
-cd ev3rt-beta4-release/
-s
-cd hrp2/workspace/
-ls
-git clone http://github.com/HirokiTachiyama/Rob2015.git
-ls
-cd Rob2015/
-ls
-platex 20150529.tex 
-ls
-pwd
-git init
-git status
+cd jack-of-all-trades/
+ls -la
+ruby main.rb 

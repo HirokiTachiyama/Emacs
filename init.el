@@ -5,7 +5,7 @@
 ;;;;; init.el
 ;;;;; Edittor       Hiroki Tachiyama
 ;;;;; Written       2015/03/31 14:00
-;;;;; Last Modified 2015/06/03 12:00
+;;;;; Last Modified 2015/09/12 14:00
 ;;;;;
 ;;;;; ・設定についての説明もしっかり残しておくこと！
 ;;;;; ・どの環境でもこのファイルとその他ディレクトリ（elise等）を入れれば
@@ -23,14 +23,19 @@
 ;;;;;;;;;;when文などで場合分けする。
 ;;;;;;;;;;defvarでconst変数
 ;;(defvar *Using-Operating-System* "Arch Linux VaioL")
-(defvar *Using-Operating-System* "Arch Linux VaioZ")
+;;(defvar *Using-Operating-System* "Arch Linux VaioZ")
 ;;(defvar *Using-Operating-System* "Arch Linux KatLab")
 ;;(defvar *Using-Operating-System* "Windows VaioL")
-;;(defvar *Using-Operating-System* "Windows VaioZ")
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
+(defvar *Using-Operating-System* "Windows VaioZ")
 ;;(defvar *Using-Operating-System* "Windows KatLab")
 ;;;;;;;;;;Using-Operating-Systemおわり;;;;;;;;;;
-
-
 
 ;;;;;;;;;;色についてのセクション;;;;;;;;;;
 ;;基本的な文字, 背景など
@@ -45,12 +50,14 @@
 (set-face-foreground 'mode-line-inactive "gray30") ;非アクティブのモードライン背景色
 (set-face-background 'mode-line-inactive "gray85") ;非アクティブのモードライン前景色
 
-
 ;;括弧の中を強調表示
 (setq show-paren-delay 0)
 (show-paren-mode t)
 (setq show-paren-style 'expression)
-(set-face-background 'show-paren-match-face "#412323") ;括弧の範囲色
+(set-face-background 'show-paren-match-face "#222222") ;括弧の範囲色
+
+;;yes/no を y/n に
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;;タブと全角スペース、行末の半角スペースの可視化
 (defface my-face-b-1 '((t (:background "NavajoWhite4"))) nil) ; 全角スペース
@@ -60,7 +67,7 @@
 (defvar my-face-b-2 'my-face-b-2)
 (defvar my-face-u-1 'my-face-u-1)
 (defadvice font-lock-mode (before my-font-lock-mode ())
- (font-lock-add-keywords
+(font-lock-add-keywords
  major-mode
  '(("\t" 0 my-face-b-2 append)
  ("　" 0 my-face-b-1 append)
@@ -86,8 +93,11 @@
 ;;;;;;;;;;*.elのロードおわり;;;;;;;;;;
 
 ;;;;;;;;;;各種機能;;;;;;;;;;
+
+
 (server-start) ;テキストファイルやソースコードを開く関連付け
 (setq inhibit-startup-screen t) ;スタートメニュー非表示
+(scroll-bar-mode 0)
 (setq kill-whole-line t) ;C-kで行全体を削除
 (tool-bar-mode -1) ;ツールバーを非表示
 (setq make-backup-files nil) ;バックアップを残さない
@@ -96,6 +106,20 @@
 (line-number-mode t) ;行の表示(モードライン)
 (column-number-mode t) ;何文字目かを表示(モードライン)
 (icomplete-mode t) ;バッファー移動時にミニウィンドウに候補を表示
+(set-frame-parameter nil 'alpha 85)
+;; 透明度を変更するコマンド M-x set-alpha
+;; http://qiita.com/marcy@github/items/ba0d018a03381a964f24
+(defun set-alpha (alpha-num)
+  "set frame parameter 'alpha"
+  (interactive "nAlpha: ")
+  (set-frame-parameter nil 'alpha (cons alpha-num '(85))))
+;;環境変数を読み込む eshellで使えるコマンドを増やす！
+;(add-to-load-path "elpa/exec-path-from-shell")
+;(require 'exec-path-from-shell) ;; if not using the ELPA package
+;(exec-path-from-shell-initialize)
+;(let ((envs '("PATH" "VIRTUAL_ENV" "GOROOT" "GOPATH")))
+;  (exec-path-from-shell-copy-envs envs))
+
 
 ;;ファイルのフルパスをタイトルバーに表示
 (setq frame-title-format
@@ -131,11 +155,38 @@
 (setq cua-enable-cua-keys nil) ;デフォルトの矩形選択モードのキーバインドを無くす
 (define-key global-map (kbd "C-x SPC") 'cua-set-rectangle-mark)
 
+;;
+;; ace jump mode major function
+;; 
+(add-to-list 'load-path "elisp/ace-jump-mode.el")
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+;; you can select the key you prefer to
+(define-key global-map (kbd "C-x j") 'ace-jump-mode)
+;; 
+;; enable a more powerful jump back function from ace jump mode
+;;
+(autoload
+  'ace-jump-mode-pop-mark
+  "ace-jump-mode"
+  "Ace jump back:-)"
+  t)
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+;;If you use viper mode :
+;(define-key viper-vi-global-user-map (kbd "SPC") 'ace-jump-mode)
+;;If you use evil
+;(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+;;;;;;;;;ace-jump mode over
+
 ;;自動補完 auto-complete
 (add-to-load-path "elpa/auto-complete") ;ロードパスの追加
 (add-to-load-path "elpa/popup")
 (require 'auto-complete-config)
-
 (ac-config-default)
 
 ;;{とうつと}, "とうつと"のように対応する文字を自動入力
@@ -143,12 +194,31 @@
 (add-to-list 'electric-pair-pairs '(?| . ?|))
 (add-to-list 'electric-layout-rules '(?{ . after)) ;{の後に改行を挿入}
 
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+
+
+;(require 'minimap)
 
 ;;=や,の前後に自動でスペースを挿入
 ;; (add-to-load-path "elpa/key-combo")
 ;; (require 'key-combo)
 ;; (key-combo-mode 1)
 ;; (key-combo-load-default)
+
+
+
+;デクリメント機能
+(defun cua-decr-rectangle (decriment)
+  "Decrement each line of CUA rectangle by prefix amount."
+  (interactive "p")
+  (cua-incr-rectangle (- decriment)))
+;(define-key cua--rectangle-keymap (kbd "M-I") 'cua-decr-rectangle)
+
+
+
 
 ;;;;;;;;;;各種機能おわり;;;;;;;;;;
 
@@ -167,7 +237,7 @@
 ;;Marmalade 非公式リポジトリ
 ;;MELPAにも登録されているパッケージの場合、安定版をMarmaladeに
 ;;アップロードするという使われ方が多い。
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 
 ;;MELPA 非公式リポジトリ
 ;;リポジトリに変更がある度に更新される為
@@ -178,6 +248,23 @@
 
 
 ;;;;;;;;;;各種編集モード;;;;;;;;;;
+
+;;Java開発環境 Malabar mode
+;;(add-to-load-path "elpa/malabar-mode")
+;;(add-to-load-path "elpa/groovy-mode")
+;;(require 'groovy-mode)
+;;(require 'malabar-mode)
+
+;;Haskell編集モード
+(add-to-load-path "elpa/haskell-mode")
+(require 'haskell-mode)
+
+;;C#モード
+(autoload 'csharp-mode "csharp-mode" "Major mode for editing C# code." t)
+(setq auto-mode-alist
+      (append '(("\\.cs$" . csharp-mode)) auto-mode-alist))
+
+
 
 ;;Common Lisp開発環境SLIME
 ;;Superior Lisp Interaction Mode for Emacs
@@ -228,12 +315,13 @@
 ;; YaTeX が利用する内部コマンドを定義する
 ;; 自作したコマンド /binに置いてある
 ;;platexとdvipdfmxを実行
-(setq tex-command "platex2pdf")
+(setq tex-command "platex")
+(setq dvi2-command "AcroRd32")
 (cond
   ((eq system-type 'gnu/linux) ;; GNU/Linux なら
     (setq dvi2-command "evince")) ;; evince で PDF を閲覧
   ((eq system-type 'darwin) ;; Mac なら
-    (setq dvi2-command "open -a Preview"))) ;; プレビューで
+   (setq dvi2-command "open -a Preview"))) ;; プレビューで
 (add-hook 'yatex-mode-hook '(lambda () (setq auto-fill-function nil)))
 (require 'auto-complete-latex)
 
@@ -246,11 +334,12 @@
                 ("\\.bbl$" . yatex-mode)) auto-mode-alist))
 
 ;;Syntacs checking flycheck
-(add-to-load-path "elpa/dash")
-(add-to-load-path "elpa/flycheck")
+;;(add-to-load-path "elpa/dash")
+;;(add-to-load-path "elpa/flycheck")
 ;;(require 'flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
 ;;(add-hook 'after-init-hook 'flycheck-mode)
+;;;;;;;;;;;;;;20151218 Stopped flycheck
 
 
 
@@ -319,8 +408,13 @@
 ;;;;;Arch Linux Awesome      Ibus-Anthy
 ;;;;;Arch Linux KatLab&VaioL Mozc
 
-;;(set-language-environment "Japanese")
-;;(prefer-coding-system 'UTF-8)
+(prefer-coding-system 'utf-8-unix)
+(setq buffer-file-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-clipboard-coding-system 'utf-8)
+
 (if (string-equal *Using-Operating-System* "Arch Linux VaioZ")
     (global-set-key [zenkaku-hankaku] 'ibus-toggle))
 
@@ -332,6 +426,13 @@
 	   (global-set-key [zenkaku-hankaku] 'mozc-mode)))
 ;;;;;;;;;;日本語入力おわり;;;;;;;;;;
 
+;;;;ツリー表示機能
+(add-to-load-path "elpa/neotree")
+(require 'neotree)
+(setq neo-show-hidden-files t)
+(setq neo-smar-open t)
+
+
 ;;(unless (boundp '*hoge*)
 ;;  (defvar *hoge* (read)))
 
@@ -342,4 +443,3 @@
    "Copyrights (C) 2015 All Rights ReservedHiroki Tachiyama"))
 
 
-(put 'downcase-region 'disabled nil)
